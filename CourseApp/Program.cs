@@ -1,6 +1,6 @@
 using System;
 
-namespace lab1matfunc
+namespace CourseApp
 {
     public class Program
     {
@@ -8,7 +8,7 @@ namespace lab1matfunc
         {
             var y = (Math.Pow(a, x) - Math.Pow(b, x)) * Math.Pow(a * b, 1.0 / 3) / Math.Log10(a / b);
             return y;
-        }
+        } 
 
         public static double[] TaskA(double a, double b, double xn, double xk, double dx)
         {
@@ -56,7 +56,6 @@ namespace lab1matfunc
             {
                 Console.WriteLine($"y = {item}");
             }
-            Console.ReadLine();
         }
     }
 }
