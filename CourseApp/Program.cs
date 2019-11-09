@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace CourseApp
+namespace lab1matfunc
 {
     public class Program
     {
