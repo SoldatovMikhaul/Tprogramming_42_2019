@@ -5,10 +5,66 @@ namespace CourseApp.Tests
 {
     public class DemoTest
     {
+        [Theory]
+        [InlineData(0.4, 0.8, 2.8, 1.042)]
+        [InlineData(0.4, 0.8, 3.6, 0.934)]
+        public void TestMyFunction(double a, double b, double x, double exp)
+        {
+            Assert.Equal(Program.MyFunction(a, b, x), exp, 3);
+        }
+
+        [Fact]
+        public void TestTaskAempty()
+        {
+            var res = Program.TaskA(0.4, 0.8, 4.4, 4.2, 0.6);
+            Assert.Equal(res, new double[0]);
+        }
+
+        [Fact]
+        public void TestTaskA()
+        {
+            var res = Program.TaskA(0.4, 0.8, 4.4, 5.2, 0.8).Length;
+            Assert.Equal(2, res);
+        }
+
+        [Fact]
+        public void TestTaskA2()
+        {
+            var res = Program.TaskA(0.4, 0.8, 4.0, 4.1, 3.0).Length;
+            Assert.Equal(1, res);
+        }
+
         [Fact]
         public void Test1()
         {
-            Assert.True(true);
+            Xunit.Assert.True(true);
+        }
+
+        [Fact]
+        public void TestMyFunctionZeros()
+        {
+            var res = Program.MyFunction(0.0, 0.0, 0.0);
+            Xunit.Assert.Equal(double.NaN, res);
+        }
+
+        [Fact]
+        public void TestTaskBNullMass()
+        {
+            var mass = new double[0];
+            var res = Program.TaskB(2, 2, mass);
+            Xunit.Assert.Equal(mass, res);
+        }
+
+        [Fact]
+        public void TestTaskB()
+        {
+            var x = new double[] { 4.48, 3.56, 2.78, 5.28, 3.21 };
+            var res = Program.TaskB(0.4, 0.8, x);
+            var expy = new double[] { 0.798679667502177, 0.939641931397199, 1.04398881001066, 0.681446026430611, 0.9901277581819 };
+            for (int i = 0; i < 5; i++)
+            {
+                Xunit.Assert.Equal(expy[i], res[i], 3);
+            }
         }
     }
 }

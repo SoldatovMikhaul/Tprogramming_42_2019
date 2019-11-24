@@ -55,6 +55,6 @@ namespace CourseApp
             {
                 Console.WriteLine($"y = {item}");
             }
-            }
+        }
         }
     }
