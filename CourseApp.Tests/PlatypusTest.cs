@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CourseApp.Tests
 {
-    public class PlatypusTest
+   /*  public class PlatypusTest
     {
         [Fact]
         public void TestEmptyConstructor()
@@ -51,5 +51,5 @@ namespace CourseApp.Tests
             item.Age = -5;
             Assert.Equal(10, item.Age);
         }
-    }
+    }*/
 }
