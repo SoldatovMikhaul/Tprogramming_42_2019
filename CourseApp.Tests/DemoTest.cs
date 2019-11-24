@@ -17,7 +17,7 @@ namespace CourseApp.Tests
         public void TestTaskAempty()
         {
             var res = Program.TaskA(0.4, 0.8, 4.4, 4.2, 0.6);
-            Assert.Equal(res, new double[0]);
+            Assert.Equal(res, new double[]);
         }
 
         [Fact]
