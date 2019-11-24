@@ -14,13 +14,6 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestTaskAempty()
-        {
-            var res = Program.TaskA(0.4, 0.8, 4.4, 4.2, 0.6);
-            Assert.Equal(res, new double[]);
-        }
-
-        [Fact]
         public void TestTaskA()
         {
             var res = Program.TaskA(0.4, 0.8, 4.4, 5.2, 0.8).Length;
