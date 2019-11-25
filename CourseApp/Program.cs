@@ -29,7 +29,7 @@ namespace CourseApp
             }
         }
 
-        public static List<double> TaskB(double a, double b, double[] x)
+        public static List<double> TaskB(double a, double b, List<double> xm)
         {
             List<double> rtrn = new List<double>();
             foreach (double item in xm)
