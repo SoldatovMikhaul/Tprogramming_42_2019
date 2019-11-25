@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace CourseApp.Tests
@@ -14,16 +15,30 @@ namespace CourseApp.Tests
         }
 
         [Fact]
+        public void TestTaskAempty()
+        {
+            var res = Program.TaskA(0.4, 0.8, 4.4, 4.2, 0.6);
+            Assert.Equal(res, new List<double>());
+        }
+
+        [Fact]
+        public void TestTaskA3()
+        {
+            var res = Program.TaskA(0.4, 0.8, 5.4, 5.2, 0.8).Count;
+            Assert.Equal(0, res);
+        }
+
+        [Fact]
         public void TestTaskA()
         {
-            var res = Program.TaskA(0.4, 0.8, 4.4, 5.2, 0.8).Length;
+            var res = Program.TaskA(0.4, 0.8, 4.4, 5.2, 0.8).Count;
             Assert.Equal(2, res);
         }
 
         [Fact]
         public void TestTaskA2()
         {
-            var res = Program.TaskA(0.4, 0.8, 4.0, 4.1, 3.0).Length;
+            var res = Program.TaskA(0.4, 0.8, 4.0, 4.1, 3.0).Count;
             Assert.Equal(1, res);
         }
 
@@ -41,23 +56,19 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestTaskBNullMass()
+        public void TestTaskB()
         {
-            var mass = new double[0];
-            var res = Program.TaskB(2, 2, mass);
-            Xunit.Assert.Equal(mass, res);
+            List<double> e = new List<double>();
+            var res = Program.TaskB(0.4, 0.8, e);
+            Assert.Equal(res, new List<double>());
         }
 
         [Fact]
-        public void TestTaskB()
+        public void TestTaskBWork()
         {
-            var x = new double[] { 4.48, 3.56, 2.78, 5.28, 3.21 };
-            var res = Program.TaskB(0.4, 0.8, x);
-            var expy = new double[] { 0.798679667502177, 0.939641931397199, 1.04398881001066, 0.681446026430611, 0.9901277581819 };
-            for (int i = 0; i < 5; i++)
-            {
-                Xunit.Assert.Equal(expy[i], res[i], 3);
-            }
+            List<double> mass = new List<double>() { 3.2, 3.8, 4.4, 5.0, 5.6, 6.2 };
+            var res = Program.TaskB(0.4, 0.8, mass).Count;
+            Assert.Equal(6, res);
         }
     }
 }
