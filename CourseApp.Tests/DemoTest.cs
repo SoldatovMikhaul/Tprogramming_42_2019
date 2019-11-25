@@ -62,7 +62,7 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestTaskB()
+        public void TestTaskB2()
         {
             var x = new double[] { 4.48, 3.56, 2.78, 5.28, 3.21 };
             var res = Program.TaskB(0.4, 0.8, x);
