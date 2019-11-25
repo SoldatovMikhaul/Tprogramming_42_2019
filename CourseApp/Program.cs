@@ -13,7 +13,7 @@ namespace CourseApp
 
         public static List<double> TaskA(double a, double b, double xn, double xk, double dx)
         {
-            if(xk < xn)
+            if (xk < xn)
             {
                 return new List<double>();
             }
