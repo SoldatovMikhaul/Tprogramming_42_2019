@@ -5,7 +5,7 @@ namespace CourseApp.Tests
 {
     public class TVTests
     {
-        /*[Theory]
+        [Theory]
         [InlineData(2, 50, "samsung")]
         [InlineData(1, 13, "samsung")]
         public void TestConstructorThreeParametrs(int number, int brightness, string marka)
@@ -25,14 +25,13 @@ namespace CourseApp.Tests
             Assert.Equal(" ", item.Marka);
         }
 
-        /*
         [Fact]
         public void TestConstructorOneParametrs()
         {
             var item = new TV(12);
             Assert.Equal(12, item.Number);
-            Assert.Equal(50, item.Brightness);
-            Assert.Equal("samsung", item.Marka);
+            Assert.Equal(1, item.Brightness);
+            Assert.Equal(" ", item.Marka);
         }
 
         [Fact]
@@ -40,8 +39,49 @@ namespace CourseApp.Tests
         {
             var item = new TV();
             Assert.Equal(1, item.Number);
-            Assert.Equal(50, item.Brightness);
+            Assert.Equal(1, item.Brightness);
+            Assert.Equal(" ", item.Marka);
+        }
+
+        [Fact]
+        public void TestSetMarka()
+        {
+            var item = new TV();
+            item.Marka = "samsung";
             Assert.Equal("samsung", item.Marka);
-        }*/
+        }
+
+        [Fact]
+        public void TestIncorrectSetNumber()
+        {
+            try
+            {
+                var item = new TV();
+                item.Number = -8;
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Number should be > 0");
+                Assert.True(true);
+            }
+        }
+
+        [Fact]
+        public void TestCorrectIncorrectSetNumber()
+        {
+            var item = new TV();
+            try
+            {
+                item.Number = 13;
+                item.Number = -5;
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("CountSalo should be > 0");
+                Assert.True(true);
+            }
+
+            Assert.Equal(13, item.Number);
+        }
     }
 }

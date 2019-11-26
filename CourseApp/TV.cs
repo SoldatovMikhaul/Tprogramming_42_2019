@@ -15,12 +15,12 @@ namespace CourseApp
         }
 
         public TV(int number)
-        : this(1, 1)
+        : this(number, 1)
         {
         }
 
         public TV(int number, int brightness)
-        : this(1, 1, " ")
+        : this(number, brightness, " ")
         {
         }
 
