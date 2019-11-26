@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApp6
+namespace CourseApp
 {
     public class TV
     {
         private int number;
-        private bool turnon;
+        private int brightness;
 
         public TV()
         : this(1)
@@ -17,18 +15,21 @@ namespace ConsoleApp6
         }
 
         public TV(int number)
-        : this(number, true, "samsung")
+        : this(1, 1)
         {
         }
 
-        public TV(int number, bool turnon, string marka)
+        public TV(int number, int brightness)
+        : this(1, 1, " ")
+        {
+        }
+
+        public TV(int number, int brightness, string marka)
         {
             Number = number;
-            Turnon = turnon;
+            Brightness = brightness;
             Marka = marka;
         }
-
-        public string Marka { get; set; }
 
         public int Number
         {
@@ -39,57 +40,57 @@ namespace ConsoleApp6
 
             set
             {
-                if (value >= 0 && value < 101)
+                if (value >= 1 && value < 101)
                 {
                     this.number = value;
                 }
                 else
                 {
-                    Console.WriteLine("Number should be > 0 and < than 101");
+                    throw new ArgumentOutOfRangeException("Number", "Number should be >= 1 and =< than 101");
                 }
             }
         }
 
-        public bool Turnon
+        public int Brightness
         {
             get
             {
-                return this.turnon;
+                return this.brightness;
             }
 
             set
             {
-                if (value == false || value == true)
+                if (value >= 1 && value < 99)
                 {
-                    this.turnon = value;
+                    this.brightness = value;
                 }
                 else
                 {
-                    Console.WriteLine("Не правильно введено новое значение включения или выключения");
+                    throw new ArgumentOutOfRangeException("value", "Brightness should be >= 1 and < than 99");
                 }
             }
         }
 
-        public void GetInfo()
+        public string Marka { get; set; }
+
+        public override string ToString()
         {
-            if (turnon == true)
-            {
-                Console.WriteLine($"Включено,Марка:{Marka},Номер канала:{Number}");
-            }
-            else
-            {
-                Console.WriteLine($"Вsключено,Марка:{Marka}");
-            }
+            return $"Включено,Марка:{Marka},Номер канала:{Number},Яркость:{Brightness}";
         }
 
-        public void TurnonTV()
+        public void Turn()
         {
-            Console.WriteLine($"{Marka}:включено");
+            Console.WriteLine("Включено");
         }
 
-        public void ChanelUp()
+        public void NextChanel()
         {
             this.number++;
+        }
+
+        public void BrightnessDown()
+        {
+            this.brightness--;
         }
     }
 }
