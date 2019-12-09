@@ -80,7 +80,7 @@ namespace SuperClass
                 throw new AgeException("You Appliances willn't work");
             }
         }
-        public void ByNew(Appliance Televizor)
+        public void ByNew(Appliances Televizor)
         {
             if (Voltage > 0)
             {
