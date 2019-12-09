@@ -65,44 +65,44 @@ namespace SuperClass
         public int Warranty { get; set; }
 
         public int Price { get; set; }
-    }
-    public void ByNew(string marka, int voltage, int warranty)
-    {
-        if (Voltage > 0)
+        public void ByNew(string marka, int voltage, int warranty)
         {
-            if ((Marka != "") && change)
+            if (Voltage > 0)
             {
-                Marka = marka;
-                Voltage = voltage;
-                Warranty = warranty;
+                if ((Marka != "") && change)
+                {
+                    Marka = marka;
+                    Voltage = voltage;
+                    Warranty = warranty;
+                }
+            }
+            else
+            {
+                throw new AgeException("You Appliances willn't work");
             }
         }
-        else
+        public void ByNew(Appliance Televizor)
         {
-            throw new AgeException("You Appliances willn't work");
-        }
-    }
-    public void ByNew(Appliance Televizor)
-    {
-        if (Voltage > 0)
-        {
-            if ((Marka != "") && change)
+            if (Voltage > 0)
             {
-                Marka = Appliances.Marka;
-                Voltage = Appliances.Voltage;
-                Warranty = Appliances.Warranty;
+                if ((Marka != "") && change)
+                {
+                    Marka = Appliances.Marka;
+                    Voltage = Appliances.Voltage;
+                    Warranty = Appliances.Warranty;
+                }
+            }
+            else
+            {
+                throw new AgeException("You Appliances willn't work");
             }
         }
-        else
+        public override string ToString()
         {
-            throw new AgeException("You Appliances willn't work");
+            string s = $"You want to by {Nazvanie}, marka: {Marka}, voltage: {Voltage},vith warranty on {Warranty}";
+            return s;
         }
+        public abstract string Broke();
     }
-    public override string ToString()
-    {
-    string s = $"You want to by {Nazvanie}, marka: {Marka}, voltage: {Voltage},vith warranty on {Warranty}";
-    return s;
-    }
-    public abstract string Broke();
 }
 
