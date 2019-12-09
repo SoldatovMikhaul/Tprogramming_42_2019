@@ -102,7 +102,7 @@ namespace SuperClass
             string s = $"You want to by {Nazvanie}, marka: {Marka}, voltage: {Voltage},vith warranty on {Warranty}";
             return s;
         }
+
         public abstract string Broke();
     }
 }
-
