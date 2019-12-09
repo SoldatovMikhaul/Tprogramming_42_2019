@@ -8,10 +8,10 @@ namespace SuperClass
 {
     public abstract class Appliances
     {
-        private string nazvanie;
-        private string marka;
+       // private string nazvanie;
+       // private string marka;
         private int voltage;
-        private int warranty;
+        //private int warranty;
 
         public Appliances()
         : this("")
@@ -68,7 +68,7 @@ namespace SuperClass
         {
             if (Voltage > 0)
             {
-                if ((Marka != "") && change)
+                if (Marka != "")
                 {
                     Marka = marka;
                     Voltage = voltage;
@@ -84,7 +84,7 @@ namespace SuperClass
         {
             if (Voltage > 0)
             {
-                if ((Marka != "") && change)
+                if (Marka != "")
                 {
                     Marka = Appliances.Marka;
                     Voltage = Appliances.Voltage;
