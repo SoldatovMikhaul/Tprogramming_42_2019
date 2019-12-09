@@ -8,10 +8,7 @@ namespace SuperClass
 {
     public abstract class Appliances
     {
-       // private string nazvanie;
-       // private string marka;
         private int voltage;
-        //private int warranty;
 
         public Appliances()
         : this("")
@@ -55,7 +52,7 @@ namespace SuperClass
                 }
                 else
                 {
-                    throw new AgeException("voltage should be > 0 and < than 220");
+                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
                 }
             }
         }
@@ -77,7 +74,7 @@ namespace SuperClass
             }
             else
             {
-                throw new AgeException("You Appliances willn't work");
+                throw new ArgumentOutOfRangeException("You Appliances willn't work");
             }
         }
         public void ByNew(Appliances Televizor)
@@ -86,14 +83,14 @@ namespace SuperClass
             {
                 if (Marka != "")
                 {
-                    Marka = Appliances.Marka;
-                    Voltage = Appliances.Voltage;
-                    Warranty = Appliances.Warranty;
+                    Marka = Televizor.Marka;
+                    Voltage = Televizor.Voltage;
+                    Warranty = Televizor.Warranty;
                 }
             }
             else
             {
-                throw new AgeException("You Appliances willn't work");
+                throw new ArgumentOutOfRangeException("You Appliances willn't work");
             }
         }
         public override string ToString()
