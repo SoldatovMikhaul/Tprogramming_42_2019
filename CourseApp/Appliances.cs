@@ -63,7 +63,7 @@ namespace SuperClass
 
         public int Warranty { get; set; }
 
-        public int Marka { get; set; }
+        public string Marka { get; set; }
         public void ByNew(string marka, int voltage, int warranty)
         {
             if (Voltage > 0)
