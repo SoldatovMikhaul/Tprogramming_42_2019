@@ -37,6 +37,7 @@ namespace SuperClass
             Voltage = voltage;
             Warranty = warranty;
         }
+
         public virtual int Voltage
         {
             get
@@ -56,6 +57,7 @@ namespace SuperClass
                 }
             }
         }
+
         public string Nazvanie { get; set; }
 
         public int Warranty { get; set; }
@@ -77,6 +79,7 @@ namespace SuperClass
                 throw new ArgumentOutOfRangeException("You Appliances willn't work");
             }
         }
+
         public void ByNew(Appliances Televizor)
         {
             if (Voltage > 0)
@@ -93,6 +96,7 @@ namespace SuperClass
                 throw new ArgumentOutOfRangeException("You Appliances willn't work");
             }
         }
+
         public override string ToString()
         {
             string s = $"You want to by {Nazvanie}, marka: {Marka}, voltage: {Voltage},vith warranty on {Warranty}";
