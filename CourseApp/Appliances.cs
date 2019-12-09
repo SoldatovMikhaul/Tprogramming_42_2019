@@ -11,7 +11,7 @@ namespace SuperClass
         private int voltage;
 
         public Appliances()
-        : this("")
+        : this(" ")
         {
         }
 
