@@ -13,7 +13,6 @@ namespace SuperClass
         private int voltage;
         private int warranty;
 
-        private string nazvanie;
         public Appliances()
         : this("")
         {
