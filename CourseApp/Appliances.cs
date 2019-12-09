@@ -68,7 +68,7 @@ namespace SuperClass
         {
             if (Voltage > 0)
             {
-                if (Marka != "")
+                if (Marka != " ")
                 {
                     Marka = marka;
                     Voltage = voltage;
@@ -81,15 +81,15 @@ namespace SuperClass
             }
         }
 
-        public void ByNew(Appliances Televizor)
+        public void ByNew(Appliances televizor)
         {
             if (Voltage > 0)
             {
-                if (Marka != "")
+                if (Marka != " ")
                 {
-                    Marka = Televizor.Marka;
-                    Voltage = Televizor.Voltage;
-                    Warranty = Televizor.Warranty;
+                    Marka = televizor.Marka;
+                    Voltage = televizor.Voltage;
+                    Warranty = televizor.Warranty;
                 }
             }
             else
