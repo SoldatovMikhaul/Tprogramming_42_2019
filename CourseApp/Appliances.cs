@@ -9,11 +9,6 @@ namespace SuperClass
     public abstract class Appliances
     {
         private string nazvanie;
-
-        //nazvanie - название
-        //marka - марка
-        //voltage - напряжение
-        //warranty - гарантия
         public Appliances()
         : this("")
         {
