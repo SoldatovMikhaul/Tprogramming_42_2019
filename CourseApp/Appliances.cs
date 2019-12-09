@@ -19,7 +19,7 @@ namespace SuperClass
         }
 
         public Appliances(string nazvanie)
-        : this("Televizor", 220)
+        : this("Televizor", "samsung")
         {
         }
 
@@ -51,7 +51,7 @@ namespace SuperClass
             {
                 if (value <= 0 && value > 220)
                 {
-                    this.age = value;
+                    this.voltage = value;
                 }
                 else
                 {
@@ -63,7 +63,7 @@ namespace SuperClass
 
         public int Warranty { get; set; }
 
-        public int Price { get; set; }
+        public int Marka { get; set; }
         public void ByNew(string marka, int voltage, int warranty)
         {
             if (Voltage > 0)
