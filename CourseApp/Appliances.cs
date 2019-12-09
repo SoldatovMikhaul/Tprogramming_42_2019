@@ -9,6 +9,11 @@ namespace SuperClass
     public abstract class Appliances
     {
         private string nazvanie;
+        private string marka;
+        private int voltage;
+        private int warranty;
+
+        private string nazvanie;
         public Appliances()
         : this("")
         {
@@ -32,7 +37,7 @@ namespace SuperClass
         public Appliances(string nazvanie, string marka, int voltage, int warranty)
         {
             Nazvanie = nazvanie;
-            marka = marka;
+            Marka = marka;
             Voltage = voltage;
             Warranty = warranty;
         }
