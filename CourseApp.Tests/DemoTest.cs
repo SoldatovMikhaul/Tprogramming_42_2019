@@ -70,5 +70,6 @@ namespace CourseApp.Tests
             var res = Program.TaskB(0.4, 0.8, mass).Count;
             Assert.Equal(6, res);
         }
+
     }
 }
