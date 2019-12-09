@@ -61,7 +61,7 @@ namespace SuperClass
 
         public int Price { get; set; }
     }
-    public void ByAppliances(string marka, int voltage, int warranty)
+    public void ByNew(string marka, int voltage, int warranty)
     {
         if (Voltage > 0)
         {
@@ -77,7 +77,7 @@ namespace SuperClass
             throw new AgeException("You Appliances willn't work");
         }
     }
-    public void ByAppliances(Appliance Televizor)
+    public void ByNew(Appliance Televizor)
     {
         if (Voltage > 0)
         {
