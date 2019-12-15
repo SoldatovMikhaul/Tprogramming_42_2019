@@ -78,18 +78,18 @@ namespace CourseApp
             }
         }
 
-        public virtual DateTime Time
+        public virtual DateTime Time2
         {
             get
             {
-                return this.Time;
+                return this.Time2;
             }
 
             set
             {
                 if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
                 {
-                    this.Time = value;
+                    this.Time2 = value;
                 }
                 else
                 {

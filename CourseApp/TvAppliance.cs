@@ -6,8 +6,7 @@ namespace CourseApp
 {
     public class TvAppliance : Appliances
     {
-        private int number;
-
+        // private int number;
         public TvAppliance()
         : this(" ")
         {

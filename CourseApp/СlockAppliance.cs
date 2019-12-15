@@ -6,9 +6,8 @@ namespace CourseApp
 {
     public class СlockAppliance : Appliances
     {
-        private DateTime time;
-        private int brightness;
-
+        // private DateTime time1;
+        // private int brightness;
         public СlockAppliance()
         : this(" ")
         {
@@ -34,10 +33,10 @@ namespace CourseApp
         {
         }
 
-        public СlockAppliance(string nazvanie, string marka, int voltage, int warranty, DateTime time)
+        public СlockAppliance(string nazvanie, string marka, int voltage, int warranty, DateTime time1)
         : base(nazvanie, marka, voltage, warranty)
         {
-            this.Time = time;
+            this.Time2 = time1;
         }
 
         public override string Broke()
@@ -45,18 +44,18 @@ namespace CourseApp
             return "Your Appliance is broken";
         }
 
-        /*public override DateTime Vremy
+        /*public override DateTime Time2
         {
             get
             {
-                return base.Vremy;
+                return base.Time2;
             }
 
             set
             {
                 if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
                 {
-                    base.Vremy = value;
+                    base.Time2 = value;
                 }
                 else
                 {
