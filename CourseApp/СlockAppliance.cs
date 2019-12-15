@@ -6,8 +6,6 @@ namespace CourseApp
 {
     public class СlockAppliance : Appliances
     {
-        private DateTime time2;
-
         public СlockAppliance()
         : this(" ")
         {
