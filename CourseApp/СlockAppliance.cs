@@ -10,90 +10,59 @@ namespace CourseApp
         private int brightness;
 
         public СlockAppliance()
-        : this(new DateTime(2005, 11, 20, 12, 1, 10))
+        : this(" ")
         {
         }
 
-        public СlockAppliance(DateTime time)
-        : this(time, 1)
+        public СlockAppliance(string nazvanie)
+        : this(nazvanie, "untitled")
         {
         }
 
-        public СlockAppliance(DateTime time, int brightness)
-        : this(time, brightness, " ")
+        public СlockAppliance(string nazvanie, string marka)
+        : this(nazvanie, marka, 220)
         {
         }
 
-        public СlockAppliance(DateTime time, int brightness, string marka)
+        public СlockAppliance(string nazvanie, string marka, int voltage)
+        : this(nazvanie, marka, voltage, 1)
         {
-            Time = time;
-            Brightness = brightness;
-            Marka = marka;
         }
 
-        public DateTime Time
+        public СlockAppliance(string nazvanie, string marka, int voltage, int warranty)
+        : this(nazvanie, marka, voltage, warranty, new DateTime(12, 30, 35))
+        {
+        }
+
+        public СlockAppliance(string nazvanie, string marka, int voltage, int warranty, DateTime time)
+        : base(nazvanie, marka, voltage, warranty)
+        {
+            this.Vremy = time;
+        }
+
+        public override string Broke()
+        {
+            return "Your Appliance is broken";
+        }
+
+        /*public override DateTime Vremy
         {
             get
             {
-                return this.time;
+                return base.Vremy;
             }
 
             set
             {
-                if ((value >= new DateTime(2000, 0, 0, 0, 0, 0)) && (value < new DateTime(2000, 12, 31, 24, 60, 60)))
+                if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
                 {
-                    this.time = value;
+                    base.Vremy = value;
                 }
                 else
                 {
                     throw new ArgumentOutOfRangeException("Time", "Unacceptable time");
                 }
             }
-        }
-
-        public override int Voltage
-        {
-            get
-            {
-                return base.Voltage;
-            }
-
-            set
-            {
-                if (value <= 0 && value > 220)
-                {
-                    base.Voltage = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
-                }
-            }
-        }
-
-        public int Brightness
-        {
-            get
-            {
-                return this.brightness;
-            }
-
-            set
-            {
-                if (value >= 1 && value < 99)
-                {
-                    this.brightness = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("value", "Brightness should be >= 1 and < than 99");
-                }
-            }
-        }
-
-        public override string Broke()
-        {
-            return "This Apppliance is broken((";
-        }
+        }*/
     }
 }

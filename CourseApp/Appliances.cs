@@ -21,12 +21,12 @@ namespace CourseApp
         }
 
         public Appliances(string nazvanie, string marka)
-        : this(nazvanie, marka, 0)
+        : this(nazvanie, marka, 220)
         {
         }
 
         public Appliances(string nazvanie, string marka, int voltage)
-        : this(nazvanie, marka, voltage, 220)
+        : this(nazvanie, marka, voltage, 1)
         {
         }
 
@@ -47,13 +47,53 @@ namespace CourseApp
 
             set
             {
-                if (value <= 0 && value > 220)
+                if (value > 0 && value <= 220)
                 {
                     this.voltage = value;
                 }
                 else
                 {
                     throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
+                }
+            }
+        }
+
+        public virtual int Number
+        {
+            get
+            {
+                return this.Number;
+            }
+
+            set
+            {
+                if (value > 0 && value <= 100)
+                {
+                    this.Number = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
+                }
+            }
+        }
+
+        public virtual DateTime Vremy
+        {
+            get
+            {
+                return this.Time;
+            }
+
+            set
+            {
+                if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
+                {
+                    this.Time = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Time", "Unacceptable time");
                 }
             }
         }

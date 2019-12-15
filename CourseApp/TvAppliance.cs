@@ -7,82 +7,50 @@ namespace CourseApp
     public class TvAppliance : Appliances
     {
         private int number;
-        private int brightness;
 
         public TvAppliance()
-        : this(1)
+        : this(" ")
         {
         }
 
-        public TvAppliance(int number)
-        : this(number, 1)
+        public TvAppliance(string nazvanie)
+        : this(nazvanie, "untitled")
         {
         }
 
-        public TvAppliance(int number, int brightness)
-        : this(number, brightness, " ")
+        public TvAppliance(string nazvanie, string marka)
+        : this(nazvanie, marka, 220)
         {
         }
 
-        public TvAppliance(int number, int brightness, string marka)
+        public TvAppliance(string nazvanie, string marka, int voltage)
+        : this(nazvanie, marka, voltage, 1)
         {
-            Number = number;
-            Brightness = brightness;
-            Marka = marka;
         }
 
-        public int Number
+        public TvAppliance(string nazvanie, string marka, int voltage, int warranty)
+        : this(nazvanie, marka, voltage, warranty, 1)
+        {
+        }
+
+        public TvAppliance(string nazvanie, string marka, int voltage, int warranty, int number)
+        : base(nazvanie, marka, voltage, warranty)
+        {
+            this.Number = number;
+        }
+
+        public override int Number
         {
             get
             {
-                return this.number;
+                return base.Number;
             }
 
             set
             {
-                if (value >= 1 && value < 101)
+                if (value > 0 && value <= 100)
                 {
-                    this.number = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("Number", "Number should be >= 1 and =< than 101");
-                }
-            }
-        }
-
-        public int Brightness
-        {
-            get
-            {
-                return this.brightness;
-            }
-
-            set
-            {
-                if (value >= 1 && value < 99)
-                {
-                    this.brightness = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("value", "Brightness should be >= 1 and < than 99");
-                }
-            }
-        }
-
-        public override int Voltage
-        {
-            get
-            {
-                return base.Voltage;
-            }
-
-            set
-            {
-                if (value <= 0 && value > 220)
-                {
-                    base.Voltage = value;
+                    base.Number = value;
                 }
                 else
                 {
@@ -93,22 +61,7 @@ namespace CourseApp
 
         public override string Broke()
         {
-            return "This Apppliance is broken((";
-        }
-
-        public void Turn()
-        {
-            Console.WriteLine("Включено");
-        }
-
-        public void NextChanel()
-        {
-            this.number++;
-        }
-
-        public void BrightnessDown()
-        {
-            this.brightness--;
+            return "Your Appliance is broken";
         }
     }
 }
