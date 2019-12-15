@@ -37,7 +37,7 @@ namespace CourseApp
         public СlockAppliance(string nazvanie, string marka, int voltage, int warranty, DateTime time)
         : base(nazvanie, marka, voltage, warranty)
         {
-            this.Vremy = time;
+            this.Time = time;
         }
 
         public override string Broke()

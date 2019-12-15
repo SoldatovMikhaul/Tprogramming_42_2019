@@ -78,7 +78,7 @@ namespace CourseApp
             }
         }
 
-        public virtual DateTime Vremy
+        public virtual DateTime Time
         {
             get
             {
