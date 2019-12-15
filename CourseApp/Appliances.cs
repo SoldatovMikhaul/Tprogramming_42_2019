@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperClass
+namespace CourseApp
 {
     public abstract class Appliances
     {
@@ -16,12 +16,12 @@ namespace SuperClass
         }
 
         public Appliances(string nazvanie)
-        : this("Televizor", "samsung")
+        : this(nazvanie, "untitled")
         {
         }
 
         public Appliances(string nazvanie, string marka)
-        : this("Televizor", "samsung", 0)
+        : this(nazvanie, marka, 0)
         {
         }
 
