@@ -6,8 +6,8 @@ namespace CourseApp
 {
     public class СlockAppliance : Appliances
     {
-        // private DateTime time1;
-        // private int brightness;
+        private DateTime time2;
+
         public СlockAppliance()
         : this(" ")
         {
@@ -39,12 +39,7 @@ namespace CourseApp
             this.Time2 = time1;
         }
 
-        public override string Broke()
-        {
-            return "Your Appliance is broken";
-        }
-
-        /*public override DateTime Time2
+        public override DateTime Time2
         {
             get
             {
@@ -62,6 +57,11 @@ namespace CourseApp
                     throw new ArgumentOutOfRangeException("Time", "Unacceptable time");
                 }
             }
-        }*/
+        }
+
+        public override string Broke()
+        {
+            return "Your Appliance is broken";
+        }
     }
 }
