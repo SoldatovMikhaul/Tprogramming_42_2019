@@ -8,7 +8,9 @@ namespace CourseApp
 {
     public abstract class Appliances
     {
+        private int number;
         private int voltage;
+        private DateTime time2 = new DateTime(2022, 12, 28);
 
         public Appliances()
         : this(" ")
@@ -62,14 +64,14 @@ namespace CourseApp
         {
             get
             {
-                return this.Number;
+                return this.number;
             }
 
             set
             {
                 if (value > 0 && value <= 100)
                 {
-                    this.Number = value;
+                    this.number = value;
                 }
                 else
                 {
@@ -82,18 +84,18 @@ namespace CourseApp
         {
             get
             {
-                return this.Time2;
+                return this.time2;
             }
 
             set
             {
-                if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
+                if ((value >= new DateTime(2000, 1, 1)) && (value < new DateTime(2022, 12, 30)))
                 {
-                    this.Time2 = value;
+                    this.time2 = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Time", "Unacceptable time");
+                    throw new ArgumentOutOfRangeException("Unacceptable time");
                 }
             }
         }

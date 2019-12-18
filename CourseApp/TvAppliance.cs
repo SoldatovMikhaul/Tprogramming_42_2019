@@ -6,7 +6,6 @@ namespace CourseApp
 {
     public class TvAppliance : Appliances
     {
-        // private int number;
         public TvAppliance()
         : this(" ")
         {
@@ -53,7 +52,7 @@ namespace CourseApp
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
+                    throw new ArgumentOutOfRangeException("Number should be > 0 and < than 100");
                 }
             }
         }

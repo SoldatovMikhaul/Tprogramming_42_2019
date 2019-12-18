@@ -9,10 +9,24 @@ namespace CourseApp.Tests
         public void TestEmptyConstructorTvAppliances()
         {
             var item = new TvAppliance();
+
             Assert.Equal(" ", item.Nazvanie);
-            Assert.Equal(" ", item.Marka);
-            Assert.Equal(219, item.Voltage);
-            Assert.Equal(0, item.Warranty);
+            Assert.Equal("untitled", item.Marka);
+            Assert.Equal(220, item.Voltage);
+            Assert.Equal(1, item.Warranty);
+            Assert.Equal(1, item.Number);
+        }
+
+        [Fact]
+        public void TestEmptyConstructorClockAppliances()
+        {
+            var item = new СlockAppliance();
+
+            Assert.Equal(" ", item.Nazvanie);
+            Assert.Equal("untitled", item.Marka);
+            Assert.Equal(220, item.Voltage);
+            Assert.Equal(1, item.Warranty);
+            Assert.Equal(new DateTime(2000, 11, 23), item.Time2);
         }
 
         [Fact]
@@ -20,14 +34,13 @@ namespace CourseApp.Tests
         {
             Appliances televizor = new TvAppliance("TV", "Samsung", 5, 220);
             televizor.Broke();
-            Assert.Equal(" ", "This Apppliance is broken((");
+            Assert.Equal("Your Appliance is broken", televizor.Broke());
         }
 
         [Fact]
         public void TvApplianceTest2()
         {
-            // string nazvanie, string marka, int voltage, int warranty, int number
-            Appliances televizor = new TvAppliance("TV", "Samsung", 5, 220);
+            Appliances televizor = new TvAppliance("TV", "Samsung", 220, 5);
             televizor.ByNew(televizor);
             Assert.Equal("TV", televizor.Nazvanie);
             Assert.Equal(220, televizor.Voltage);
@@ -39,29 +52,28 @@ namespace CourseApp.Tests
         public void TestEmptyConstructorСlockAppliance()
         {
             var item = new СlockAppliance();
-            Assert.Equal(new DateTime(0, 0, 0), item.Time2);
-            Assert.Equal(" ", item.Marka);
-            Assert.Equal(1, item.Voltage);
-            Assert.Equal(0, item.Warranty);
+            Assert.Equal(new DateTime(2000, 11, 23), item.Time2);
+            Assert.Equal("untitled", item.Marka);
+            Assert.Equal(220, item.Voltage);
+            Assert.Equal(1, item.Warranty);
         }
 
         [Fact]
         public void СlockApplianceTest1()
         {
-            // string nazvanie, string marka, int voltage, int warranty, DateTime time1
-            Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(0, 0, 0));
+            Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(2000, 11, 23));
             clockAppliance.Broke();
-            Assert.Equal(" ", "This Apppliance is broken((");
+            Assert.Equal("Your Appliance is broken", clockAppliance.Broke());
         }
 
         [Fact]
         public void СlockApplianceTest2()
         {
-            Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(0, 0, 0));
+            Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(2000, 11, 23));
             clockAppliance.ByNew(clockAppliance);
-            Assert.Equal("Samsung", clockAppliance.Marka);
+            Assert.Equal("samsung", clockAppliance.Marka);
             Assert.Equal(220, clockAppliance.Voltage);
-            Assert.Equal(5, clockAppliance.Warranty);
+            Assert.Equal(2, clockAppliance.Warranty);
         }
 
         [Fact]

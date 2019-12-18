@@ -27,7 +27,7 @@ namespace CourseApp
         }
 
         public СlockAppliance(string nazvanie, string marka, int voltage, int warranty)
-        : this(nazvanie, marka, voltage, warranty, new DateTime(12, 30, 35))
+        : this(nazvanie, marka, voltage, warranty, new DateTime(2000, 11, 23))
         {
         }
 
@@ -46,13 +46,13 @@ namespace CourseApp
 
             set
             {
-                if ((value >= new DateTime(0, 0, 0)) && (value < new DateTime(24, 60, 60)))
+                if ((value >= new DateTime(2000, 11, 13)) && (value < new DateTime(2022, 12, 28)))
                 {
                     base.Time2 = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Time", "Unacceptable time");
+                    throw new ArgumentOutOfRangeException("Unacceptable time");
                 }
             }
         }
