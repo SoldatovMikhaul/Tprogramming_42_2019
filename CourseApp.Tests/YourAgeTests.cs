@@ -5,12 +5,51 @@ namespace CourseApp.Tests
 {
     public class YourAgeTests
     {
-        /*[Theory]
-        [InlineData(15, 11, 2008)]
-        [InlineData(22, 8, 2000)]
-        public void TestAge(int years, int months, int days)
+        [Fact]
+        public void YourAgeDate()
         {
-            Assert.Equal($"Ваш возоаст: {DateTime.Now.Year - years} лет {DateTime.Now.Month - months} месяцев и {DateTime.Now.Day - days} дня", YourAge.YourAgeNow(days, months, years));
-        }*/
+            Assert.Equal(new DateTime(20, 2, 16), YourAge.DateComparison(new DateTime(2000, 11, 5), new DateTime(2019, 12, 21)));
+        }
+
+        [Fact]
+        public void YourAgeStrig()
+        {
+            string result = YourAge.DateComparison2(new DateTime(2000, 11, 1), new DateTime(2019, 10, 1));
+            Assert.Equal("Вам 18 лет, 11 месяцев и 0 дня", result);
+        }
+
+        [Fact]
+        public void NowDate2()
+        {
+            bool isWorking = false;
+            try
+            {
+                YourAge.DateComparison(DateTime.Now, DateTime.Now);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+                isWorking = true;
+            }
+
+            Assert.True(isWorking);
+        }
+
+        [Fact]
+        public void FeatureDate()
+        {
+            bool isThrown = false;
+            try
+            {
+                YourAge.YourAgeNow(2028, 12, 21);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+                isThrown = true;
+            }
+
+            Assert.True(isThrown);
+        }
     }
 }
