@@ -80,42 +80,19 @@ namespace CourseApp
             }
         }
 
-        public virtual DateTime Time2
-        {
-            get
-            {
-                return this.time2;
-            }
-
-            set
-            {
-                if ((value >= new DateTime(2000, 1, 1)) && (value < new DateTime(2022, 12, 30)))
-                {
-                    this.time2 = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("Unacceptable time");
-                }
-            }
-        }
-
         public string Nazvanie { get; set; }
 
         public int Warranty { get; set; }
 
         public string Marka { get; set; }
 
-        public void ByNew(string marka, int voltage, int warranty)
+        public void BuyNew(string marka, int voltage, int warranty)
         {
-            if (Voltage > 0)
+            if ((Voltage > 0) && (Marka != string.Empty))
             {
-                if (Marka != " ")
-                {
-                    Marka = marka;
-                    Voltage = voltage;
-                    Warranty = warranty;
-                }
+                Marka = marka;
+                Voltage = voltage;
+                Warranty = warranty;
             }
             else
             {
@@ -123,16 +100,13 @@ namespace CourseApp
             }
         }
 
-        public void ByNew(Appliances televizor)
+        public void BuyNew(Appliances televizor)
         {
-            if (Voltage > 0)
+            if ((Voltage > 0) && (Marka != string.Empty))
             {
-                if (Marka != " ")
-                {
-                    Marka = televizor.Marka;
-                    Voltage = televizor.Voltage;
-                    Warranty = televizor.Warranty;
-                }
+                Marka = televizor.Marka;
+                Voltage = televizor.Voltage;
+                Warranty = televizor.Warranty;
             }
             else
             {

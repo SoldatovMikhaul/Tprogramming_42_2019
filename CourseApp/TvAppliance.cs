@@ -6,6 +6,10 @@ namespace CourseApp
 {
     public class TvAppliance : Appliances
     {
+        private const int DefoltNumChanel = 1;
+        private const int DefoltVoltage = 220;
+        private const int DefoltNumWarranty = 1;
+
         public TvAppliance()
         : this(" ")
         {
@@ -17,17 +21,17 @@ namespace CourseApp
         }
 
         public TvAppliance(string nazvanie, string marka)
-        : this(nazvanie, marka, 220)
+        : this(nazvanie, marka, DefoltVoltage)
         {
         }
 
         public TvAppliance(string nazvanie, string marka, int voltage)
-        : this(nazvanie, marka, voltage, 1)
+        : this(nazvanie, marka, voltage, DefoltNumWarranty)
         {
         }
 
         public TvAppliance(string nazvanie, string marka, int voltage, int warranty)
-        : this(nazvanie, marka, voltage, warranty, 1)
+        : this(nazvanie, marka, voltage, warranty, DefoltNumChanel)
         {
         }
 

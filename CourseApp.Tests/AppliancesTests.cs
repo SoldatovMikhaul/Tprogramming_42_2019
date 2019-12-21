@@ -41,7 +41,7 @@ namespace CourseApp.Tests
         public void TvApplianceTest2()
         {
             Appliances televizor = new TvAppliance("TV", "Samsung", 220, 5);
-            televizor.ByNew(televizor);
+            televizor.BuyNew(televizor);
             Assert.Equal("TV", televizor.Nazvanie);
             Assert.Equal(220, televizor.Voltage);
             Assert.Equal(5, televizor.Warranty);
@@ -70,7 +70,7 @@ namespace CourseApp.Tests
         public void СlockApplianceTest2()
         {
             Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(2000, 11, 23));
-            clockAppliance.ByNew(clockAppliance);
+            clockAppliance.BuyNew(clockAppliance);
             Assert.Equal("samsung", clockAppliance.Marka);
             Assert.Equal(220, clockAppliance.Voltage);
             Assert.Equal(2, clockAppliance.Warranty);

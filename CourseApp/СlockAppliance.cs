@@ -6,6 +6,8 @@ namespace CourseApp
 {
     public class СlockAppliance : Appliances
     {
+        private DateTime time;
+
         public СlockAppliance()
         : this(" ")
         {
@@ -37,18 +39,18 @@ namespace CourseApp
             this.Time2 = time1;
         }
 
-        public override DateTime Time2
+        public DateTime Time2
         {
             get
             {
-                return base.Time2;
+                return this.time;
             }
 
             set
             {
                 if ((value >= new DateTime(2000, 11, 13)) && (value < new DateTime(2022, 12, 28)))
                 {
-                    base.Time2 = value;
+                    this.time = value;
                 }
                 else
                 {
