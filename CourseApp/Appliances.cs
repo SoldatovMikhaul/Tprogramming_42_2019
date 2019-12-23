@@ -10,7 +10,6 @@ namespace CourseApp
     {
         private int number;
         private int voltage;
-        private DateTime time2 = new DateTime(2022, 12, 28);
 
         public Appliances()
         : this(" ")
@@ -55,7 +54,7 @@ namespace CourseApp
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
+                    throw new ArgumentOutOfRangeException("voltage should be > 0");
                 }
             }
         }
@@ -75,7 +74,7 @@ namespace CourseApp
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 220");
+                    throw new ArgumentOutOfRangeException("voltage should be > 0 and < than 380");
                 }
             }
         }

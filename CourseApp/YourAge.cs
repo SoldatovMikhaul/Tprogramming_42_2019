@@ -22,7 +22,7 @@ namespace CourseApp
             throw new ArgumentOutOfRangeException("Вас не существует((");
         }
 
-        public static string DateComparison2(DateTime date1, DateTime date2)
+        public static string FromAndTo(DateTime date1, DateTime date2)
         {
             long a = Math.Abs(date2.Ticks - date1.Ticks);
             if (a < 10000001)
@@ -41,11 +41,8 @@ namespace CourseApp
 
         public static string YourAgeNow()
         {
-            Console.WriteLine("Введите год вашего рождения:");
             int year = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите месяц вашего рождения:");
             int month = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите день вашего рождения:");
             int day = int.Parse(Console.ReadLine());
             DateTime res = DateComparison(new DateTime(year, month, day), DateTime.Now);
             return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";

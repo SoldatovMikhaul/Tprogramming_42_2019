@@ -38,21 +38,21 @@ namespace CourseApp
         public TvAppliance(string nazvanie, string marka, int voltage, int warranty, int number)
         : base(nazvanie, marka, voltage, warranty)
         {
-            this.Number = number;
+            this.ChanelNumber = number;
         }
 
         public override int Number
         {
             get
             {
-                return base.Number;
+                return base.ChanelNumber;
             }
 
             set
             {
                 if (value > 0 && value <= 100)
                 {
-                    base.Number = value;
+                    base.ChanelNumber = value;
                 }
                 else
                 {
