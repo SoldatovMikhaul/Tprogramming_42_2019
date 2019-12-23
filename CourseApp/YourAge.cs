@@ -50,19 +50,19 @@ namespace CourseApp
             int month = int.Parse(Console.ReadLine());
             int day = int.Parse(Console.ReadLine());
             DateTime res = DateComparison(new DateTime(year, month, day), DateTime.Now);
-            rtnAge(res);
+            return rtnAge(res);
         }
 
         public static string YourAgeNow(int y, int m, int d)
         {
             DateTime res = DateComparison(new DateTime(y, m, d), DateTime.Now);
-            rtnAge(res);
+            return rtnAge(res);
         }
 
         public static string YourAgeNow(DateTime date)
         {
             DateTime res = DateComparison(date, DateTime.Now);
-            rtnAge(res);
+            return rtnAge(res);
         }
     }
 }
