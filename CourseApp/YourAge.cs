@@ -5,6 +5,11 @@ namespace CourseApp
 {
     public class YourAge
     {
+        public string rtnAge()
+        { 
+         return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
+        }
+
         public static DateTime DateComparison(DateTime date1, DateTime date2)
         {
             long a = Math.Abs(date2.Ticks - date1.Ticks);
@@ -45,19 +50,19 @@ namespace CourseApp
             int month = int.Parse(Console.ReadLine());
             int day = int.Parse(Console.ReadLine());
             DateTime res = DateComparison(new DateTime(year, month, day), DateTime.Now);
-            return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
+            rtnAge();
         }
 
         public static string YourAgeNow(int y, int m, int d)
         {
             DateTime res = DateComparison(new DateTime(y, m, d), DateTime.Now);
-            return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
+            rtnAge();
         }
 
         public static string YourAgeNow(DateTime date)
         {
             DateTime res = DateComparison(date, DateTime.Now);
-            return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
+            rtnAge();
         }
     }
 }

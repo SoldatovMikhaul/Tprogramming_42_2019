@@ -85,34 +85,6 @@ namespace CourseApp
 
         public string Marka { get; set; }
 
-        public void BuyNew(string marka, int voltage, int warranty)
-        {
-            if ((Voltage > 0) && (Marka != string.Empty))
-            {
-                Marka = marka;
-                Voltage = voltage;
-                Warranty = warranty;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("You Appliances willn't work");
-            }
-        }
-
-        public void BuyNew(Appliances televizor)
-        {
-            if ((Voltage > 0) && (Marka != string.Empty))
-            {
-                Marka = televizor.Marka;
-                Voltage = televizor.Voltage;
-                Warranty = televizor.Warranty;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("You Appliances willn't work");
-            }
-        }
-
         public override string ToString()
         {
             string s = $"You want to by {Nazvanie}, marka: {Marka}, voltage: {Voltage},vith warranty on {Warranty}";
