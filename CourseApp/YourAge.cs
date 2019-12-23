@@ -22,7 +22,7 @@ namespace CourseApp
             throw new ArgumentOutOfRangeException("Вас не существует((");
         }
 
-        public static string FromAndTo(DateTime date1, DateTime date2)
+        public static string FromDateToDate(DateTime date1, DateTime date2)
         {
             long a = Math.Abs(date2.Ticks - date1.Ticks);
             if (a < 10000001)

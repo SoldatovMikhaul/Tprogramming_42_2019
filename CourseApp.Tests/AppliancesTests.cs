@@ -14,7 +14,7 @@ namespace CourseApp.Tests
             Assert.Equal("untitled", item.Marka);
             Assert.Equal(220, item.Voltage);
             Assert.Equal(1, item.Warranty);
-            Assert.Equal(1, item.Number);
+            Assert.Equal(1, item.ChanelNumber);
         }
 
         [Fact]
