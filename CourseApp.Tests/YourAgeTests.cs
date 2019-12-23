@@ -14,7 +14,7 @@ namespace CourseApp.Tests
         [Fact]
         public void YourAgeStrig()
         {
-            string result = YourAge.FromAndTo(new DateTime(2000, 11, 1), new DateTime(2019, 10, 1));
+            string result = YourAge.FromDateToDate(new DateTime(2000, 11, 1), new DateTime(2019, 10, 1));
             Assert.Equal("Вам 18 лет, 11 месяцев и 0 дня", result);
         }
 
