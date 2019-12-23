@@ -41,7 +41,7 @@ namespace CourseApp
             this.ChanelNumber = number;
         }
 
-        public override int Number
+        public override int ChanelNumber
         {
             get
             {
