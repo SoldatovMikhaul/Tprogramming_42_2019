@@ -59,7 +59,7 @@ namespace CourseApp
             }
         }
 
-        public virtual int Number
+        public virtual int ChanelNumber
         {
             get
             {
