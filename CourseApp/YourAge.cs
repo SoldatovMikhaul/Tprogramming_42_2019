@@ -5,7 +5,7 @@ namespace CourseApp
 {
     public class YourAge
     {
-        public string rtnAge(DateTime res)
+        public static string rtnAge(DateTime res)
         { 
             return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
         }
