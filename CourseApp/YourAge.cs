@@ -7,7 +7,7 @@ namespace CourseApp
     {
         public string rtnAge()
         { 
-         return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
+            return $"Вам {res.Year - 1} лет, {res.Month - 1} месяцев и {res.Day - 1} дня";
         }
 
         public static DateTime DateComparison(DateTime date1, DateTime date2)
