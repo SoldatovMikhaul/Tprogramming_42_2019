@@ -14,7 +14,6 @@ namespace CourseApp.Tests
             Assert.Equal("untitled", item.Marka);
             Assert.Equal(220, item.Voltage);
             Assert.Equal(1, item.Warranty);
-            Assert.Equal(1, item.ChanelNumber);
         }
 
         [Fact]
@@ -38,17 +37,6 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TvApplianceTest2()
-        {
-            Appliances televizor = new TvAppliance("TV", "Samsung", 220, 5);
-            televizor.BuyNew(televizor);
-            Assert.Equal("TV", televizor.Nazvanie);
-            Assert.Equal(220, televizor.Voltage);
-            Assert.Equal(5, televizor.Warranty);
-            Assert.Equal("Samsung", televizor.Marka);
-        }
-
-        [Fact]
         public void TestEmptyConstructorСlockAppliance()
         {
             var item = new СlockAppliance();
@@ -64,16 +52,6 @@ namespace CourseApp.Tests
             Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(2000, 11, 23));
             clockAppliance.Broke();
             Assert.Equal("Your Appliance is broken", clockAppliance.Broke());
-        }
-
-        [Fact]
-        public void СlockApplianceTest2()
-        {
-            Appliances clockAppliance = new СlockAppliance("clock", "samsung", 220, 2, new DateTime(2000, 11, 23));
-            clockAppliance.BuyNew(clockAppliance);
-            Assert.Equal("samsung", clockAppliance.Marka);
-            Assert.Equal(220, clockAppliance.Voltage);
-            Assert.Equal(2, clockAppliance.Warranty);
         }
 
         [Fact]
