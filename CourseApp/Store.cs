@@ -4,19 +4,19 @@ using System.Text;
 
 namespace CourseApp
 {
-    class Store
+    public class Store
     {
-        private string Marka;
-        private int Voltage;
-        private int Warranty;
+        private string marka;
+        private int voltage;
+        private int warranty;
 
-        public void BuyNew(string marka, int voltage, int warranty)
+        public void BuyNew(string marka1, int voltage1, int warranty1)
         {
-            if ((Voltage > 0) && (Marka != string.Empty))
+            if ((voltage > 0) && (marka != string.Empty))
             {
-                Marka = marka;
-                Voltage = voltage;
-                Warranty = warranty;
+                marka = marka1;
+                voltage = voltage1;
+                warranty = warranty1;
             }
             else
             {
