@@ -6,9 +6,10 @@ namespace CourseApp
 {
     class Store
     {
-        public string Marka ;
-        public int Voltage;
-        public int Warranty;
+        private string Marka;
+        private int Voltage;
+        private int Warranty;
+
         public void BuyNew(string marka, int voltage, int warranty)
         {
             if ((Voltage > 0) && (Marka != string.Empty))
