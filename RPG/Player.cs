@@ -25,8 +25,9 @@ namespace RPG
         public string Class { get; protected set; }
         public string Name { get; set; }
         public Player Enemy { get; set; } = null;
-        public double HP { get; set; } = rnd.Next(1, 100);
-        public int Strong { get; } = rnd.Next(1, 99);
+        public Player EnemyNumber { get; set; } = null;
+        public double HP { get; set; } = rnd.Next(70, 100);
+        public int Strong { get; } = rnd.Next(10, 20);
         public Abilities UsingAbility { get; set; }
 
         public List<Abilities> UseAbility = new List<Abilities>();
